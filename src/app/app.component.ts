@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mybank';
+  valor!: number;
+  destino!: number;
+
+  recebeTransferencia(data: any) {
+    this.valor = data.valor;
+    this.destino = data.destino;
+  }
 }
