@@ -3,15 +3,14 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'mybank';
-  valor!: number;
-  destino!: number;
+  transferencias: any[] = [];
 
   recebeTransferencia(data: any) {
-    this.valor = data.valor;
-    this.destino = data.destino;
+    const trasferencia = { ...data, data: new Date() }; // spread Operator Clona os itens do objeto e adiciona a data
+    this.transferencias.push(trasferencia);
   }
 }
